@@ -21,6 +21,8 @@ class CommonDatabase(object):
 			self.config['database'] = database
 		self.initialize_database()
 
+	def __del__(self):
+		self.database.close()
 
 	def initialize_database(self):
 		'''
